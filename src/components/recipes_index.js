@@ -35,13 +35,14 @@ class RecipesList extends Component {
 		<div> 
 		     
 			
-			<h2 className=" d-inline-block">Our Recipes</h2>
-			<Link	to="/new" className="btn btn-primary d-inline-block pull-xs-right">
-				Add Recipe
-			</Link>
-			<ul className="list-group w100">
+			<h2 className="text-xs-center">Our Recipes</h2>
+			
+			<ul className="list-group">
 				{this.renderRecipes()}
 			</ul>
+			<Link	to="/new" className="btn btn-primary d-inline-block pull-xs-right">
+				New Recipe
+			</Link>
 			
 		</div>
 	 )
