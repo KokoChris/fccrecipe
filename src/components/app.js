@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export default class App extends Component {
   render() {
     return (
-      <div>
-            Header
+      <div className="container">
+            
       		{this.props.children}
-      		Footer
+      	
       </div>
 
     );
