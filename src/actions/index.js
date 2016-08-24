@@ -3,6 +3,7 @@ import axios from 'axios';
 export const GET_RECIPES = 'GET_RECIPES';
 export const GET_RECIPE = 'GET_RECIPE';
 export const DEL_RECIPE ='DEL_RECIPE';
+export const POST_RECIPE ='POST_RECIPE';
 const API_URL = 'https://recipator.herokuapp.com/api/recipes';
 
 export function getRecipes() {
@@ -27,4 +28,14 @@ export function deleteRecipe(id){
     	type:DEL_RECIPE,
     	payload:request
     }
+}
+
+export function createRecipe(props){
+    const request = axios.post(API_URL, props);
+    console.log(request)
+    return {
+        type: POST_RECIPE,
+        payload: request
+    }
+
 }

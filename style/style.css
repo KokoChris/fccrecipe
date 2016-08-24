@@ -5,3 +5,8 @@
 .showButtons button {
 	margin-left:5px;
 }
+
+.has-danger {
+	color: red;
+}
+
