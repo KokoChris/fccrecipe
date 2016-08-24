@@ -27,7 +27,7 @@ static contextTypes = {
 
 		console.log(this.props)
 
-		const { fields:{title,ingredients}, handleSubmit} = this.props;
+		const { fields:{title,ingredients}, handleSubmit,updateRecipe,getRecipe} = this.props;
 
 		return (
 
@@ -79,17 +79,11 @@ function validate(values) {
 }
 
 
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({getRecipe},dispatch);
-}
-
-function mapStateToProps(state) {
-
-	return {recipes:state.recipes.recipe}
-}
 
 export default reduxForm({
 	form:'EditRecipeForm',
 	fields:['title', 'ingredients'],
 	validate
-},null,{updateRecipe,getRecipe})(EditRecipeForm)
+},state => ({ // mapStateToProps
+  initialValues: state.recipes.recipe // will pull state into form's initialValues
+}),{updateRecipe,getRecipe})(EditRecipeForm)
