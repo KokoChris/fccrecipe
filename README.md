@@ -1,25 +1,15 @@
-# ReduxSimpleStarter
+# RecipeBox
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+The third react project for FreeCodeCamp...
+A simple recipe box but utilizes many of the importan pieces of the react ecosystem like:
 
-###Getting Started###
+ReactRoute,Redux,Redux-Form
 
-There are two methods for getting started with this repo.
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+It hooks to a real api on heroku where I used redis for a change.
+The files are build with webpack.
 
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
-```
-	> npm install
-	> npm start
-```
+
+
