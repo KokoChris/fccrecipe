@@ -1,7 +1,7 @@
 import React,{Component,PropTypes} from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import {getRecipe} from '../actions/index';
+import {getRecipe,deleteRecipe} from '../actions/index';
 
 
 
@@ -13,6 +13,12 @@ class ShowRecipe extends Component {
 
 	componentWillMount() {
 		this.props.getRecipe(this.props.params.id);
+	}
+	handleDelete() {
+		this.props.deleteRecipe(this.props.params.id)
+		.then(() => {
+			this.context.router.push('/');
+		})
 	}
     render(){
     	
@@ -34,7 +40,10 @@ class ShowRecipe extends Component {
 			<p className="showButtons">
 				
 				<Link className="btn btn-sm btn-warning"to={`/recipes/${this.props.params.id}/edit`}>Edit</Link>
-				<Link className="btn btn-sm btn-danger"to={`/recipes/${this.props.params.id}/delete`}>Delete</Link>
+				<button 
+					className="btn btn-sm btn-danger"
+					onClick={this.handleDelete.bind(this)}>Delete
+			    </button>
 			</p>
 			<p>
 				<Link to="/">List of Recipes </Link>
@@ -59,4 +68,4 @@ function mapStateToProps(state) {
 
 
 
-export default connect(mapStateToProps,{getRecipe})(ShowRecipe)
+export default connect(mapStateToProps,{getRecipe,deleteRecipe})(ShowRecipe)
