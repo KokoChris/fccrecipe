@@ -33,10 +33,7 @@ class RecipesList extends Component {
 
 		return (
 		<div> 
-		     
-			
 			<h2 className="text-xs-center">Our Recipes</h2>
-			
 			<ul className="list-group">
 				{this.renderRecipes()}
 			</ul>
