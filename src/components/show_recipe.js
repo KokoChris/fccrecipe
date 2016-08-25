@@ -33,7 +33,7 @@ class ShowRecipe extends Component {
 	return (
 
 
-		<div>
+		<div className="card card-block">
 
 		    <h2>{title}</h2>
 		    <span>Ingredients: <strong>{ingredients}</strong></span>
@@ -44,9 +44,8 @@ class ShowRecipe extends Component {
 					className="btn btn-sm btn-danger"
 					onClick={this.handleDelete.bind(this)}>Delete
 			    </button>
-			</p>
-			<p>
-				<Link to="/">List of Recipes </Link>
+			
+				<Link className="btn btn-sm btn-success" to="/">List of Recipes </Link>
 			</p>
 		</div>
 	)
